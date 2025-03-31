@@ -1,0 +1,42 @@
+---
+version: "2.0"
+services:
+  ssh-test:
+    image: ubuntu:latest
+    expose:
+      - port: 22
+        as: 22
+        to:
+          - global: true
+    command:
+      - "/bin/bash"
+      - "-c"
+      - >
+        apt-get update && 
+        apt-get install -y openssh-server python3 && 
+        mkdir /var/run/sshd && 
+        echo 'root:password' | chpasswd && 
+        sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && 
+        echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCR4QySxOlrDdpZ0gRed5lZPi+xjrUEzlTI3o3tMtGSrQO5kovtAA7oKreOqUT65v7tianaeV5nxDnl+4cgUhSA7dbx2o3sN8JUDauwvyAmWwxv7mAJiwDoOuOfHDEXN2BcSL1ufccJ0iVsSisUJuUj0FwuHM5X3TjF0BAE8IGvGZTW9+u+eSo0PNCgluPVmT8lBazvlF2PC87lXwHeoO4kUFqxwOFyTxaOnntELNWvh8r12NNQF+ULyBxMJdnrWwZu2SEiyt6oPJOG+6Qdarh0CoR8D1xPzXs9jCzsvPj6G4vib6No9Mag58pze7XiyVO0YvG9qMBi9GV9lG9997LqPgKPcSRMS0KzNDbb23BaVXYjCGpGeGKuJpdMU6LDQ/I6BW6xvkVv/EOD5CnwMZ9teaZns1I5WCs7IowaHDnsbWQH22nxCS+nLkVVg/guOakmx6qVJdjJXTOZ6J4wjBWFYeMsKnukXj45yoNTiD2KsFg89vekPa1JoZ267pFh+h+6+Wnm1oFV9QuCKP0JadEhK7SsuGh9ZszEc49q8r3/LJVEW0+na4iuOdDg12gd9N/j65iMMEKB7Q2Dt/5IGf8QcKWe6Mf7DhWBO3K+LIyfcqRJhCMdB/p8earFbVg8KFecafTcIi98y9CndsZ99/Y6Qr1qelSGeBZZuLzgj0N3GQ== suhasamaresh@gmail.com' >> /root/.ssh/authorized_keys && 
+        /usr/sbin/sshd -D
+profiles:
+  compute:
+    ssh-test:
+      resources:
+        cpu:
+          units: 0.1
+        memory:
+          size: 512Mi
+        storage:
+          size: 512Mi
+  placement:
+    akash:
+      pricing:
+        ssh-test:
+          denom: uakt
+          amount: 5000
+deployment:
+  ssh-test:
+    akash:
+      profile: ssh-test
+      count: 1

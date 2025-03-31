@@ -1,0 +1,22 @@
+{
+    "name": "akash-checker-subnet",
+    "version": "1.0.0",
+    "description": "Production-ready Checker Subnet for Akash Testnet Providers",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "@lighthouse-web3/sdk": "^0.3.7",
+        "axios": "^1.6.8",
+        "chart.js": "^4.4.2",
+        "chartjs-to-image": "^1.2.2",
+        "dotenv": "^16.4.5",
+        "geoip-lite": "^1.4.10",
+        "node-ssh": "^13.2.1",
+        "ping": "^0.4.4",
+        "ssh2": "^1.16.0"
+    },
+    "author": "",
+    "license": "MIT"
+}
