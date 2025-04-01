@@ -1,3 +1,4 @@
+// ~/akash-checker/src/filecoin.js
 const lighthouse = require('@lighthouse-web3/sdk');
 const fs = require('fs').promises;
 require('dotenv').config();

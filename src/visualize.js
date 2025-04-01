@@ -1,3 +1,4 @@
+// ~/akash-checker/src/visualize.js
 const Chart = require('chart.js/auto');
 const ChartImage = require('chartjs-to-image');
 
