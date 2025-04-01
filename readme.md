@@ -1,5 +1,3 @@
-I understand—since `akash1rk090a6mq9gvm0h6ljf8kz8mrxglwwxsk4srxh` is the *only* provider available on the Akash testnet, we’ll update the `README.md` to remove any implication that other providers in `TESTNET_PROVIDERS` are testable or relevant for SSH tests. We’ll streamline it to focus exclusively on this single provider, avoiding confusion about skipped tests for others. Here’s the revised version:
-
 ---
 
 # Akash Checker Subnet
