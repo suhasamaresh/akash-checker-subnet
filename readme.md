@@ -45,7 +45,7 @@ This project runs on the Akash testnet (`sandbox-01`) with deployments to evalua
    - Verify address: `akash keys show suhas -a` (e.g., `akash1549z93ma6y77zvgw4gup053d5dteh9rt6wr8z5`).
 
 5. **Get Testnet Funds**:
-   - Request testnet AKT from a faucet (e.g., Akash Discord).
+   - Request testnet AKT from a faucet (e.g., Akash Discord)(The faucent link is given in akash testnet docs).
    - Check balance: `akash query bank balances $(akash keys show suhas -a) --node http://sandbox-01.aksh.pw:26657`.
 
 ## Files
