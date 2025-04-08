@@ -19,7 +19,7 @@ This project runs on the Akash testnet (`sandbox-01`) with deployments to evalua
 
 1. **Clone the Repository**:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/suhasamaresh/akash-checker-subnet.git
    cd akash-checker
    ```
 
