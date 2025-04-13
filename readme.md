@@ -123,9 +123,3 @@ Feel free to fork, modify, and submit PRs to support additional providers or mai
 
 ---
 
-### Notes for You
-- Save this as `README.md` in `~/akash-checker/`.
-- Replace `<your-repo-url>` with your GitHub link if applicable.
-- This aligns with your statement that `akash1rk090a6mq9gvm0h6ljf8kz8mrxglwwxsk4srxh` is the only testnet provider, so no other providers in `TESTNET_PROVIDERS` are relevant for now.
-
-Let’s confirm it works. Run `npm start` and share the output—did it generate metrics for `akash1rk090a6mq9gvm0h6ljf8kz8mrxglwwxsk4srxh`? If it run successfully , it'll generate all the related images in the same directory.
